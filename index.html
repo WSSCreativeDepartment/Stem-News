@@ -1,5 +1,5 @@
 <!doctype html>
-
+// CSS Design is a big part of this webpage, it will improve a day by day
 <style>
 	img {
 	max-width: 100%;
@@ -304,14 +304,20 @@
 </head>
 
 <body><center>
+ 
+ // The header
   <h2 class="Header22">Only the most important news from Steem blokchain</h2>
   <p><img width="1000" height="400" alt="" src="https://i.imgur.com/T3YGpCE.png"><span class="WebClass"></span></p>
 </center>
+
+// The main news is the latest from @steemitblog
 <div class="Promotion" id="PromotionID2" >
     <h1><label id = "SBT1"></label></h1>
         <h5><img id = "image"></h5>
     <h4><a id = "SBT2" target="_blank">VISIT ON STEEMIT.COM</a></h4>
 </div>
+
+// Here we paste the horoscope for this month's sign
 <div class="zodiacPromo">
 	
 	<center><h2>VIRGO</h2></center>
@@ -321,6 +327,9 @@
   <h5> Scroll down to check horoscopes for the rest of the signs! </h5>
   <hr>
 </div>
+
+
+// Several skipped paragraphs to adjust more types of displays
 <p>&nbsp;</p>
   <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -339,6 +348,16 @@
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  
+  
+  // four latest posts from @steemitblog
 <p>
   <span class="SteemitBlogHeader">
   <header class="SteemitBlogHeader">@STEEMITBLOG LATEST       </header>
@@ -374,9 +393,14 @@
   <p>&nbsp;</p>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
 <p>
   <header class="events">UPCOMING EVENTS</header> 
 </p>
+
+// four latest posts from coinmarketcal
+
 <div class="eventsclass1">	
 	    <h4><label id = "lab1"></label></h4>
 		<h6><label id = "lab2"></label></h6>
@@ -411,6 +435,9 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
+
+
+// Two latest post from @majes with tag "steem-price"
 <p>
   <section class="sectcl">MARKET </section>
 </p>
@@ -434,6 +461,16 @@
 	<h5><a id = "maj4" target="_blank">VISIT ON STEEMIT.COM</a></h5>
   </div>
 </div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -488,6 +525,9 @@
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <p>
   <script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
   
@@ -498,14 +538,22 @@
           limit: 5
 };
 
+	  // Fetching @steemitblog posts
 
           steem.api.getDiscussionsByBlog(query, function(err, result) {
   console.log(result[0].title);
   console.log(result[0].url);
   console.log(result[0].json_metadata);
+			  
+			  // the title
 	
 	document.getElementById('SBT1').innerHTML = '@' + result[0].author + ' - ' + result[0].title;
+			  
+			  // the url
+			  
 	document.getElementById('SBT2').href = 'https://steemit.com' + result[0].url;
+			  
+			  //the thumbnail image
 	const json = JSON.parse(result[0].json_metadata);
                     const image = json.image ? json.image[0] : '';
                                                                  
@@ -547,6 +595,9 @@
   
 });
         </script>  
+        
+        
+        // fetching API from coinmarketcal
   <script>
 	var request = new XMLHttpRequest();
 
@@ -558,7 +609,7 @@ request.onload = function () {
 
   if (request.status >= 200 && request.status < 400) {
     
-    
+    // fetching the info about upcoming steem events (title, date, description and the source)
     document.getElementById('lab1').innerHTML = data[0].title;
     document.getElementById('lab2').innerHTML = data[0].date_event;
     document.getElementById('lab3').innerHTML = data[0].description;
@@ -594,7 +645,7 @@ request.send();
   <script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
   
   <script>
- 
+ // Fetching posts from @majes
 
 var query = { limit : 2, tag : "steem-price" };
           steem.api.getDiscussionsByTrending(query, function(err, data) {
@@ -616,7 +667,9 @@ var query = { limit : 2, tag : "steem-price" };
 
   
 });
-        </script>  
+        </script> 
+        
+         // zodiac - something we write evry week and it doesn't update automatically - by @big.mama 
   
 <script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script></p>
 <div class="ASTROCLASS">
@@ -707,7 +760,7 @@ var query = { limit : 2, tag : "steem-price" };
 <p>&nbsp;</p>
 <p>&nbsp; </p>
 <script>
-            
+            // Fecthinh 4 trening posts in category "airdrops"
           var query = { limit : 5, tag : "airdrop" };
           steem.api.getDiscussionsByTrending(query, function(err, data) 
                                                                                  
