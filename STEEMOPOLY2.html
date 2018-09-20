@@ -1,0 +1,3633 @@
+<!DOCTYPE html>
+
+<html>
+  
+  
+      <!--Stylizing buttons in CSS, they are all "above" svg drawing-->
+      <!--The start button-->
+      <!--Player A "ROLL" button-->
+      <!--Player B "ROLL" button-->
+      <!--Player A "BUY" button-->
+      <!--Player B "BUY" button-->
+      <!--Player A "NEXT" button-->
+      <!--Player B "NEXT" button-->
+
+
+
+  
+  <style>
+    #player1 {
+
+    
+    position: absolute;
+    left: 340px;
+    top: 250px;
+      width: 130px;
+        height: 130px;
+     border-radius: 50%;
+      border-width: 3px;
+      border-color: red;
+      background-color: platinum;
+      
+      color: red;
+      font-size: 20px
+
+        }
+    #button {
+      
+
+    
+    position: absolute;
+    left: 355px;
+    top: 580px;
+      width: 130px;
+        height: 70px;
+     border-radius: 20%;
+      border-width: 3px;
+      border-color: red;
+      background-color: platinum;
+      color: red;
+      font-size: 20px
+
+    }
+    #button2 {
+      
+
+    
+    position: absolute;
+    left: 355px;
+    top: 580px;
+      width: 130px;
+        height: 70px;
+     border-radius: 20%;
+      border-width: 3px;
+      border-color: red;
+      background-color: platinum;
+      color: red;
+      font-size: 20px
+
+    }
+    #buy {
+    
+    position: absolute;
+    left: 135px;
+    top: 580px;
+      width: 80px;
+        height: 80px;
+     border-radius: 50%;
+      border-width: 3px;
+      border-color: red;
+      background-color: platinum;
+      color: red;
+      font-size: 30px
+     
+
+    }
+    
+    #buy2 {
+    
+    position: absolute;
+    left: 135px;
+    top: 580px;
+      width: 80px;
+        height: 80px;
+     border-radius: 50%;
+      border-width: 3px;
+      border-color: red;
+      background-color: platinum;
+      color: red;
+      font-size: 30px
+     
+
+    }
+    
+    #next1 {
+    
+    position: absolute;
+    left: 610px;
+    top: 580px;
+      width: 80px;
+        height: 80px;
+     border-radius: 50%;
+      border-width: 3px;
+      border-color: red;
+      background-color: platinum;
+      color: red;
+      font-size: 25px
+     
+
+    }
+    
+     #next2 {
+    
+    position: absolute;
+    left: 610px;
+    top: 580px;
+      width: 80px;
+        height: 80px;
+     border-radius: 50%;
+      border-width: 3px;
+      border-color: red;
+      background-color: platinum;
+      color: red;
+      font-size: 25px
+     
+
+    }
+    
+    svg {
+     font-family: "Verdana" 
+       
+       
+    }
+    
+    </style>
+  
+  
+  <!--SVG - vector drawing of all fields and player AVATARS with text labels (by ID) -->
+   
+
+     
+  <svg height="820" width="820">
+       
+  <rect id = "Start" x="2" y="2" width="100" height="100" stroke="black" stroke-width="2" fill="linen" />
+    
+  <rect id = "Spam1" x="104" y="2" width="66" height="100" stroke="black" stroke-width="2" fill="#CCFFCC" />
+    
+  <rect id = "Airdrop1" x="172" y="2" width="66" height="100" stroke="black" stroke-width="2" fill="linen" />
+   
+  <rect id = "Spam2" x="240" y="2" width="66" height="100" stroke="black" stroke-width="2" fill="#CCFFCC" />
+    
+  <rect id = "Fee1" x="308" y="2" width="66" height="100" stroke="black" stroke-width="2" fill="red" />
+   
+  <rect id = "Ico1" x="376" y="2" width="66" height="100" stroke="black" stroke-width="2" fill="grey" />
+  
+  <rect id = "Shitpost1" x="444" y="2" width="66" height="100" stroke="black" stroke-width="2" fill="#996633"/>
+
+  <rect id = "Shitpost2" x="512" y="2" width="66" height="100" stroke="black" stroke-width="2" fill="#996633"/>
+   
+  <rect id = "Daytrade1" x="580" y="2" width="66" height="100" stroke="black" stroke-width="2" fill="blue" />
+   
+  <rect id = "Shitpost3" x="648" y="2" width="66" height="100" stroke="black" stroke-width="2" fill="#996633" />
+
+  <rect id = "Warning" x="716" y="2" width="100" height="100" stroke="black" stroke-width="2" fill="linen" />
+ 
+  <rect id = "MemePost1" x="716" y="104" width="100" height="66" stroke="black" stroke-width="2" fill="#FF9999" />  
+
+  <rect id = "MemePost2" x="716" y="172" width="100" height="66" stroke="black" stroke-width="2" fill="#FF9999" />
+
+  <rect id = "Fee2" x="716" y="240" width="100" height="66" stroke="black" stroke-width="2" fill="red" />
+
+  <rect id = "MemePost3" x="716" y="308" width="100" height="66" stroke="black" stroke-width="2" fill="#FF9999" />
+    
+  <rect id = "Ico2" x="716" y="376" width="100" height="66" stroke="black" stroke-width="2" fill="grey" />   
+  
+        <rect id = "PhotographyPost1" x="716" y="444" width="100" height="66" stroke="black" stroke-width="2" fill="#FF9900" />
+
+        <rect id = "PhotographyPost2" x="716" y="512" width="100" height="66" stroke="black" stroke-width="2" fill="#FF9900" />
+
+        <rect id = "Daytrade2" x="716" y="580" width="100" height="66" stroke="black" stroke-width="2" fill="blue" />
+    
+        <rect id = "PhotographyPost3" x="716" y="648" width="100" height="66" stroke="black" stroke-width="2" fill="#FF9900" />
+    
+        <rect id = "Naptime" x="716" y="716" width="100" height="100" stroke="black" stroke-width="2" fill="linen" />
+    
+            <rect id = "ChartPost1" x="648" y="716" width="66" height="100" stroke="black" stroke-width="2" fill="#00CC99" />
+    
+            <rect id = "Airdrop2" x="580" y="716" width="66" height="100" stroke="black" stroke-width="2" fill="linen" />
+    
+            <rect id = "ChartPost2" x="512" y="716" width="66" height="100" stroke="black" stroke-width="2" fill="#00CC99" />
+    
+            <rect id = "ChartPost3" x="444" y="716" width="66" height="100" stroke="black" stroke-width="2" fill="#00CC99" />
+    
+            <rect id = "Ico3" x="376" y="716" width="66" height="100" stroke="black" stroke-width="2" fill="grey" />
+    
+            <rect id = "LifePost1" x="308" y="716" width="66" height="100" stroke="black" stroke-width="2" fill="#66FF33" />
+    
+            <rect id = "Fee3" x="240" y="716" width="66" height="100" stroke="black" stroke-width="2" fill="red" />
+    
+            <rect id = "LifePost2" x="172" y="716" width="66" height="100" stroke="black" stroke-width="2" fill="#66FF33" />
+    
+            <rect id = "LifePost3" x="104" y="716" width="66" height="100" stroke="black" stroke-width="2" fill="#66FF33" /> 
+    
+            <rect id = "Banned!" x="2" y="716" width="100" height="100" stroke="black" stroke-width="2" fill="linen" />
+    
+            <rect id = "SteemPost1" x="2" y="648" width="100" height="66" stroke="black" stroke-width="2" fill="green" />
+    
+            <rect id = "Daytrade3" x="2" y="580" width="100" height="66" stroke="black" stroke-width="2" fill="blue" />
+    
+            <rect id = "SteemPost2" x="2" y="512" width="100" height="66" stroke="black" stroke-width="2" fill="green" />
+    
+            <rect id = "SteemPost3" x="2" y="444" width="100" height="66" stroke="black" stroke-width="2" fill="green" />
+    
+            <rect id = "Ico4" x="2" y="376" width="100" height="66" stroke="black" stroke-width="2" fill="grey" /> 
+    
+            <rect id = "Airdrop3" x="2" y="308" width="100" height="66" stroke="black" stroke-width="2" fill="linen" />
+    
+            <rect id = "DevPost1" x="2" y="240" width="100" height="66" stroke="black" stroke-width="2" fill="#660099" />
+    
+            <rect id = "Fee4" x="2" y="172" width="100" height="66" stroke="black" stroke-width="2" fill="red" />
+    
+            <rect id = "DevPost2" x="2" y="104" width="100" height="66" stroke="black" stroke-width="2" fill="#660099" />
+
+    
+  <circle id = "circle" cx="52" cy="52" r="15" stroke="black" stroke-width="2" fill="red" />
+      <circle id = "circle2" cx="52" cy="52" r="15" stroke="black" stroke-width="2" fill="red" />
+    
+    <text id = "fieldTable" x = "300" y = "200" font-size="35" >Field: START</text>
+    <text id = "fieldPrice" x = "140" y = "250" font-size="25" ></text>
+    <text x = "140" y = "300">PLAYER A - WALLET</text>
+    <text id = "wallet1" x ="200" y = "330"> </text>
+
+    <text x = "500" y = "300">PLAYER B - WALLET</text>
+    <text id = "wallet2" x ="550" y = "330"> </text>
+    
+    <text x = "570" y = "130">BANK MONEY</text>
+    <text id = "bankmoney" x ="600" y = "160"> </text>
+    
+
+    <text  x = "250" y = "450" font-size="35" >DICE 1</text>
+    <text  x = "420" y = "450" font-size="35" >DICE 2</text>
+    <text id = "randomNumber1" x = "290" y = "500" font-size="35" ></text>
+<text id = "randomNumber2" x = "460" y = "500" font-size="35" ></text>
+    
+        <text id = "player" x = "350" y = "400" font-size="28" >PLAYER </text>
+
+
+</svg>
+          <label id = "properties" x = "300" y = "520" font-size="15" ></label>
+
+  <button id = "player1">PRESS HERE TO START</button>
+
+  
+  
+ 
+
+  <button id = "button">ROLL!</button>
+    <button id = "button2">ROLL!</button>
+  <p>
+    
+    <button id = "buy">BUY</button>
+        <button id = "buy2">BUY</button>
+
+    <button id = "next1">NEXT</button>
+    <button id = "next2">NEXT</button>
+
+
+    
+  </p>
+
+  
+  <script>
+    
+    
+    // I decided to make it easier and numerize all vars
+    
+    
+    var playerA = 7;
+    var playerB = 8;
+    var bank = 100;
+    
+    // Player AVATARS
+    var circle = document.getElementById("circle");
+    var circle2 = document.getElementById("circle2");
+    
+    // Counting VARS
+    var text;
+    var counter = 0;
+    var player1counter = 0;
+    var player2counter = 0;
+    
+    
+    // There is always a BANK in the Monopoly, unfortunately 
+    var bankmoney = 15000;
+    
+    // Get the buttons by ID
+    
+    var button = document.getElementById('button'); 
+        button.style.visibility = 'hidden';
+
+    var button2 = document.getElementById('button2');
+    button2.style.visibility = 'hidden';
+    
+    var buyButton = document.getElementById('buy');
+    buyButton.style.visibility = 'hidden';
+    
+     var buyButton2 = document.getElementById('buy2');
+    buyButton2.style.visibility = 'hidden';
+    
+    var nextButton1 = document.getElementById('next1');
+    nextButton1.style.visibility = 'hidden';
+    
+      var nextButton2 = document.getElementById('next2');
+    nextButton2.style.visibility = 'hidden';
+
+    var player1b = document.getElementById('player1');  
+    
+    // Start positions for both players
+
+    var centerx = 52;
+    var centery = 52;
+    
+    var center2x = 52;
+    var center2y = 52;
+    
+    // Player wallets
+    
+    var wallet1 = 1500;
+    var wallet2 = 1500;
+    
+    // Price of the fields is now an empty variable taht will  be defined in functions
+    
+    var price;
+    
+    // Exporting wallet situations to SVG drawing in HTML
+
+    
+    document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+        document.getElementById('bankmoney').innerHTML = bankmoney;
+    
+    
+    // Numerizing property fields
+
+    
+    var propowner = 0;
+    
+    
+     var prop1owner = 11; 
+     var prop2owner = 12;
+     var prop3owner = 13;
+     var prop4owner = 14;
+     var prop5owner = 15;
+     var prop6owner = 16;
+     var prop7owner = 17;
+     var prop8owner = 18; 
+     var prop9owner = 19; 
+     var prop10owner = 20; 
+     var prop11owner = 21;
+     var prop12owner = 22; 
+     var prop13owner = 23;
+     var prop14owner = 24;
+     var prop15owner = 25;
+     var prop16owner = 26;
+     var prop17owner = 27;
+     var prop18owner = 28;
+     var prop19owner = 29; 
+     var prop20owner = 30; 
+     var prop21owner = 31; 
+     var prop22owner = 32;
+    
+    
+    //Numerizing ICO fields
+    
+    var icoowner = 49;
+    
+     var ico1owner = 50;
+     var ico2owner = 51;
+     var ico3owner = 52;
+     var ico4owner = 53;
+    
+    
+    // Helpful VARS
+    var all1 = "playerA owns: "
+        var all2 = "playerB owns: "
+        
+        var announcement1 = "+150 for passing start!"
+                var announcement2 = " fee for violating another user's post"
+
+                var announcement3 = " bonus for checking your own post"
+                var announcement0 = ""
+
+    
+
+    // An array for simplifying the movement of avatars
+    
+    var positions = ['Start', 'Spam1', 'Airdrop1', 'Spam2', 'Fee1', 'Ico1', 'Shitpost1', 'Shitpost2', 'Daytrade1', 'Shitpost3', 'Warning', 'MemePost1', 'MemePost2', 'Fee2', 'MemePost3', 'Ico2', 'PhotographyPost1', 'PhotographyPost2', 'Daytrade2', 'PhotographyPost3', 'Naptime', 'ChartPost1', 'Airdrop2', 'ChartPost2', 'ChartPost3', 'Ico3', 'LifePost1', 'Fee3', 'LifePost2', 'LifePost3', 'Banned!', 'SteemPost1', 'Daytrade3', 'SteemPost2', 'SteemPost3', 'Ico4', 'Airdrop3', 'DevPost1', 'Fee4', 'DevPost2']
+    
+    function push1() {
+      
+      // This is the 'PUSH' function for PLAYER A. The same is for player B in push2
+      // If the player A is on the move, the buttons for player B are hidden
+      
+                buyButton2.style.visibility = 'hidden';
+            nextButton2.style.visibility = 'hidden';
+      
+      // After clicking on 'ROLL' button, the same button becomes hidden and 'NEXT' button becomes visible
+
+      nextButton1.style.visibility = 'visible';
+          button.style.visibility = 'hidden';
+      
+      // Random numbers between 1 and 6 for both dices
+      let dice1 = Math.floor(Math.random() * 6) + 1;
+      let dice2 = Math.floor(Math.random() * 6) + 1;
+      
+      text = dice1 + dice2;
+      document.getElementById('randomNumber1').innerHTML = dice1;
+            document.getElementById('randomNumber2').innerHTML = dice2;
+      
+      // Counting 'STEPS' for player A to identify the field
+        
+      player1counter = (player1counter*1) + (1*text);
+      circle = document.getElementById("circle");
+         
+      counter = player1counter
+            
+// Calling other functions (will be explained later)
+      
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+      counting1()
+            fields1()
+            icofields1()
+            dayTradeFields1()
+
+      
+      move1()
+      
+      // If the player passes start field, gets a bonus
+      
+      if ((text*1) > (player1counter*1)) {
+       wallet1 = wallet1 + 150; 
+        bankmoney = bankmoney - 150;
+            document.getElementById('wallet1').innerHTML = wallet1;
+        document.getElementById('bankmoney').innerHTML = bankmoney;
+                   document.getElementById('fieldPrice').innerHTML = document.getElementById('fieldPrice').innerHTML + " / " + announcement1;
+
+      }
+      
+      document.getElementById('fieldTable').innerHTML = positions[player1counter];
+      
+    
+      
+      console.log(counter)
+      console.log(text)
+                  playerTwo()
+
+      
+        
+    }
+    
+    function push2() {
+      
+      // The function is the same as the previous one, only for payer B, so check the comments there
+      
+                      buyButton.style.visibility = 'hidden';
+
+      let dice1 = Math.floor(Math.random() * 6) + 1;
+      let dice2 = Math.floor(Math.random() * 6) + 1;
+      
+      text = dice1 + dice2;
+      document.getElementById('randomNumber1').innerHTML = dice1;
+            document.getElementById('randomNumber2').innerHTML = dice2;
+      
+      player2counter = (player2counter*1) + (1*text);
+      circle2 = document.getElementById("circle2");
+      
+            counter = player2counter
+                        nextButton1.style.visibility = 'hidden';
+
+            nextButton2.style.visibility = 'visible';
+          button2.style.visibility = 'hidden';
+
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+         counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      counting2()
+      fields2()
+      icofields2()
+      dayTradeFields2()
+      
+      move2() 
+      if ((text*1) > (player2counter*1)) {
+       wallet2 = wallet2 + 150; 
+        bankmoney = bankmoney - 150;
+            document.getElementById('wallet2').innerHTML = wallet2;
+
+                document.getElementById('bankmoney').innerHTML = bankmoney;
+                   document.getElementById('fieldPrice').innerHTML = document.getElementById('fieldPrice').innerHTML + " / " + announcement1;
+
+      }
+      document.getElementById('fieldTable').innerHTML = positions[player2counter];
+      console.log(counter)
+      console.log(text)
+
+
+                  playerOne()
+
+                          button.style.visibility = 'hidden';
+
+    }
+    
+    
+    function counting1 () {
+      
+      // To simplify identifying the fields on the board, we must reset the counter each time player passes the start field
+      
+      if (player1counter > 40) {
+       player1counter = player1counter - 40;
+        
+      } else if (player1counter === 0) {
+       centerx = 52;
+       centery = 52;
+        
+        
+      }
+      
+       
+    }
+    
+    function counting2 () {
+      // To simplify identifying the fields on the board, we must reset the counter each time player passes the start field
+      if (player2counter >= 40) {
+       player2counter = player2counter - 40;
+        
+      } else if (player2counter === 0) {
+       center2x = 52;
+       center2y = 52;
+        
+        
+      }
+      
+    
+       
+    }
+    
+    
+    function move1 () {
+      
+      // This is a key function that sets the coordinates of the player avatars depending on the field and position on the board
+      
+      // If the counter is less than 11, the 'y' coordinate is always 52. 'x' coordinate depends on the dices 
+
+      if (player1counter<11) {
+        centery = 52;
+      let countA = player1counter - 0;
+      if (centerx === 52 && countA<10) {
+        // the start field is always wider, as the 'WARNING' field, so we must count the movement carefully
+        centerx = 137 + ((countA-1)*68)  
+        } else if (countA === 10){
+        centerx = 766+0;
+      } 
+      else if (countA>0 && countA<10)
+        {
+        centerx = 137 + ((countA-1)*68)  
+      }
+        if (player1counter === 4) {
+          
+          // If you stepped on the field with position 4, you gotta pay for electricity
+         wallet1 = wallet1 - 100;
+          bankmoney = bankmoney + 100;
+          document.getElementById('wallet1').innerHTML = wallet1
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+                   document.getElementById('fieldPrice').innerHTML = 'ELETRICITY BILL  - 100';
+
+
+        }
+        if (player1counter === 2) {
+          
+          //           // If you stepped on the field with position 2, you get an 'aidrop' bonus
+
+         wallet1 = wallet1 + 80;
+          bankmoney = bankmoney - 80;
+          document.getElementById('wallet1').innerHTML = wallet1
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+           console.log("Airdrop 80")
+                   document.getElementById('fieldPrice').innerHTML = 'AIRDROP + 80';
+
+        }
+     
+      circle.setAttribute("cx", centerx);
+              circle.setAttribute("cy", centery);
+
+      console.log(countA)
+      console.log(wallet1)
+              console.log(positions[player1counter])
+
+    
+      
+      
+      
+      } else if (player1counter>=11 && player1counter <21  ){  
+        
+        
+        // Now we are at tle right side of the board, x coordinate is always 766, y depends on dice
+      centerx = 766;
+      let countB = player1counter - 10;
+       if (countB === 10){
+        centery = 154 + ((countB-1)*68);        
+      }     
+      else {
+             centery = 137 + ((countB-1)*68)
+      }
+        if (player1counter === 13) {
+          
+          
+          // pay some fees
+         wallet1 = wallet1 - 115;
+          bankmoney = bankmoney + 115;
+          document.getElementById('wallet1').innerHTML = wallet1
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+                   document.getElementById('fieldPrice').innerHTML = 'TRANSACTION FEE  - 115';
+
+        }
+        
+        circle.setAttribute("cx", centerx);
+              circle.setAttribute("cy", centery);
+      console.log(countB)
+      console.log(wallet1)
+                    console.log(positions[player1counter])
+
+      
+      
+      
+      }  else if (player1counter>=21 && player1counter<31  ){ 
+        
+        // at the botton side of the board, the y coordinate is always 766, x  depends on the dice
+      centery = 766;
+      let countC = player1counter - 20;
+       if (countC === 10){
+        centerx = 52;        
+      }     
+      else {
+             centerx = 681 - ((countC-1)*68)
+      }
+        if (player1counter === 27) {
+          
+          // pay for the bank account maintanence 
+         wallet1 = wallet1 - 130;
+          bankmoney = bankmoney + 130;
+          document.getElementById('wallet1').innerHTML = wallet1
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+                   document.getElementById('fieldPrice').innerHTML = 'BANK ACCOUNT  - 130';
+
+          
+        }
+        if (player1counter === 22) {
+          
+          // airdrop bonus
+         wallet1 = wallet1 + 100;
+          bankmoney = bankmoney - 100;
+          document.getElementById('wallet1').innerHTML = wallet1
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+           console.log("Airdrop 80")
+                   document.getElementById('fieldPrice').innerHTML = 'AIRDROP + 100';
+
+        }
+        circle.setAttribute("cx", centerx);
+              circle.setAttribute("cy", centery);
+      console.log(countC)
+      console.log(wallet1)
+                    console.log(positions[player1counter])
+                    
+                    if (player1counter === 30) {
+                      
+                     // if you stepped on field 30, you will be moved to field 10 and punished for 300 Steemopoly money of taxes
+                      wallet1 = wallet1 - 300;
+                      document.getElementById('wallet1').innerHTML = wallet1
+                      bankmoney = bankmoney + 300;
+                      document.getElementById('bankmoney').innerHTML = bankmoney;
+                   document.getElementById('fieldPrice').innerHTML = 'TAXES  - 300';
+
+                      player1counter = 10; 
+                      centerx = 766;
+                      centery = 52;
+                      circle.setAttribute("cx", centerx);
+              circle.setAttribute("cy", centery);
+                      console.log('Tax office');
+                      
+                    }
+
+      
+      
+      
+      }   else if (player1counter>=31 && player1counter<41  ){   
+      centerx = 52;
+      let countD = player1counter - 30;
+       if (countD === 10){
+        centery = 52;        
+      }     
+      else {
+             centery = 766 - 85 - ((countD-1)*68)
+      }
+        if (player1counter === 38) {
+         wallet1 = wallet1 - 150;
+          bankmoney = bankmoney + 150;
+          document.getElementById('wallet1').innerHTML = wallet1
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+                   document.getElementById('fieldPrice').innerHTML = 'LUXURY TAX  - 150';
+
+        }
+        if (player1counter === 36) {
+         wallet1 = wallet1 + 120;
+          bankmoney = bankmoney - 120;
+          document.getElementById('wallet1').innerHTML = wallet1
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+           console.log("Airdrop 80")
+                   document.getElementById('fieldPrice').innerHTML = 'AIRDROP + 120';
+
+        }
+        circle.setAttribute("cx", centerx);
+              circle.setAttribute("cy", centery);
+        
+       
+        
+      console.log(countD)
+      
+      console.log(wallet1)
+                    console.log(positions[player1counter])
+
+      
+      
+      
+      }
+      
+        
+    }
+    
+    function move2 () {
+      
+      // Read the comments for move1() function, it is the same thing but for other player
+
+      if (player2counter<11) {
+        center2y = 52;
+      let countA = player2counter - 0;
+      if (center2x === 52 && countA<10) {
+        center2x = 137 + ((countA-1)*68)  
+        } else if (countA === 10){
+        center2x = 766+0;
+      } 
+      else if (countA>0 && countA<10)
+        {
+        center2x = 137 + ((countA-1)*68)  
+      }
+        if (player2counter === 4) {
+         wallet2 = wallet2 - 100;
+          bankmoney = bankmoney + 100;
+          document.getElementById('wallet2').innerHTML = wallet2
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+                   document.getElementById('fieldPrice').innerHTML = 'ELECTRICITY BILL  - 100';
+
+        }
+        
+        if (player2counter === 2) {
+         wallet2 = wallet2 + 80;
+          bankmoney = bankmoney - 80;
+          document.getElementById('wallet2').innerHTML = wallet2
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+          console.log("airdrop 80")
+                   document.getElementById('fieldPrice').innerHTML = 'AIRDROP + 80';
+
+        }
+      circle2.setAttribute("cx", center2x);
+              circle2.setAttribute("cy", center2y);
+
+      console.log(countA)
+      console.log(wallet2)
+              console.log(positions[player2counter])
+
+    
+      
+      
+      
+      } else if (player2counter>=11 && player2counter <21  ){   
+      center2x = 766;
+      let countB = player2counter - 10;
+       if (countB === 10){
+        center2y = 154 + ((countB-1)*68);        
+      }     
+      else {
+             center2y = 137 + ((countB-1)*68)
+      }
+        if (player2counter === 13) {
+         wallet2 = wallet2 - 115;
+          bankmoney = bankmoney + 115;
+          document.getElementById('wallet2').innerHTML = wallet2
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+                   document.getElementById('fieldPrice').innerHTML = 'TRANSACTION FEE  - 115';
+
+        }
+        circle2.setAttribute("cx", center2x);
+              circle2.setAttribute("cy", center2y);
+      console.log(countB)
+      console.log(wallet2)
+                    console.log(positions[player2counter])
+
+      
+      
+      
+      }  else if (player2counter>=21 && player2counter<31  ){   
+      center2y = 766;
+      let countC = player2counter - 20;
+       if (countC === 10){
+        center2x = 52;        
+      }     
+      else {
+             center2x = 681 - ((countC-1)*68)
+      }
+        if (player2counter === 27) {
+         wallet2 = wallet2 - 130;
+          bankmoney = bankmoney + 130;
+          document.getElementById('wallet2').innerHTML = wallet2
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+                   document.getElementById('fieldPrice').innerHTML = 'BANK ACCOUNT FEE  - 130';
+
+          
+        }
+          if (player2counter === 22) {
+         wallet2 = wallet2 + 100;
+          bankmoney = bankmoney - 100;
+          document.getElementById('wallet2').innerHTML = wallet2
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+          console.log("airdrop 80")
+                   document.getElementById('fieldPrice').innerHTML = 'AIRDROP + 100';
+
+        }
+        circle2.setAttribute("cx", center2x);
+              circle2.setAttribute("cy", center2y);
+      console.log(countC)
+      console.log(wallet2)
+                    console.log(positions[player2counter])
+                    
+                      if (player2counter === 30) {
+                      wallet2 = wallet2 - 300;
+                      document.getElementById('wallet2').innerHTML = wallet2
+                      bankmoney = bankmoney + 300;
+                      document.getElementById('bankmoney').innerHTML = bankmoney;
+                   document.getElementById('fieldPrice').innerHTML = 'TAXES  - 300';
+
+                      player2counter = 10;
+                        
+                        center2x = 766;
+                      center2y = 52;
+                      circle2.setAttribute("cx", center2x);
+              circle2.setAttribute("cy", center2y);
+                        
+                      console.log('Tax office');
+                      
+                    }
+
+      
+      
+      
+      }   else if (player2counter>=31 && player2counter<41  ){   
+      center2x = 52;
+      let countD = player2counter - 30;
+       if (countD === 10){
+        center2y = 52;        
+      }     
+      else {
+             center2y = 766 - 85 - ((countD-1)*68)
+      }
+        if (player2counter === 38) {
+         wallet2 = wallet2 - 150;
+          bankmoney = bankmoney + 150;
+          document.getElementById('wallet2').innerHTML = wallet2
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+                   document.getElementById('fieldPrice').innerHTML = 'FEE  - 150';
+
+          
+        }
+          if (player2counter === 36) {
+         wallet2 = wallet2 + 120;
+          bankmoney = bankmoney - 120;
+          document.getElementById('wallet2').innerHTML = wallet2
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+          console.log("airdrop 80")
+                   document.getElementById('fieldPrice').innerHTML = 'AIRDROP + 120';
+
+        }
+        circle2.setAttribute("cx", center2x);
+              circle2.setAttribute("cy", center2y);
+      console.log(countD)
+      console.log(wallet2)
+       
+        
+                    console.log(positions[player2counter])
+
+      
+      
+      
+      }
+        
+    }
+    
+    
+    function playerOne() {
+      
+      
+      // Player A settings
+      
+      document.getElementById('player').innerHTML = 'PLAYER A';
+
+     player = 'player1';
+     circle.setAttribute('fill','cyan');
+     console.log(player);
+     
+
+        button.style.visibility = 'visible';
+              player1b.style.visibility = 'hidden';
+
+
+
+
+    }
+    
+    function playerTwo() {
+      
+      // player B settings
+     player = 'player2' 
+           
+
+     circle2.setAttribute('fill','yellow');
+
+          console.log(player);
+                    player1b.style.visibility = 'hidden';
+
+
+
+
+    }
+    
+    
+    function fields1() {
+
+
+      // This is the largest and the most complicated function in the app
+      // I will comment onlt the first field as the example, for the rest 21 fields it is the same thing but with other parameters
+      if (player1counter === 1) {
+        propowner = prop1owner;
+        
+        
+        // The regular price for the field 1
+                price = 56
+                
+                // if the same player holds the both(or all three in other cases) fields (like sam1 and spam2) the price grows for 4x
+                
+                if (prop1owner === prop2owner && prop1owner === playerA) {
+                 price = price * 4 
+                }
+        if (prop1owner === prop2owner && prop1owner === playerB) {
+                 price = price * 4 
+                }
+
+
+// if non of the players are owners of this field, the player's BUT button becomes visible 
+        
+        if (prop1owner != playerA && prop1owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: ' + price;
+
+          
+          buyButton.style.visibility = 'visible';
+          
+          // If the other player is the owner of the field, you gotta pay the fees
+          // Remember: If the same player holds all fields in the group, the price is 4 times bigger, so and fees
+
+        } else if (prop1owner === playerB) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 + price/4;
+          wallet1 = wallet1 - price/4;
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                    document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2;
+
+   
+        }   else if (prop1owner === playerA) {
+          
+          // If you already own the field you just stepped on, you get a bonus
+          
+          wallet1 = wallet1 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+
+        
+       
+       
+      }
+       if (player1counter === 3) {
+         
+         // LOOK UP TO SEE EXAMPLE FOR FIELD !
+                 propowner = prop2owner;
+        price = 64
+        if (prop1owner === prop2owner && prop1owner === playerA) {
+                 price = price * 4 
+                }
+        if (prop1owner === prop2owner && prop1owner === playerB) {
+                 price = price * 4 
+                }
+
+         
+         if (prop2owner != playerA && prop2owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price ;
+
+        buyButton.style.visibility = 'visible'
+        } else if (prop2owner === playerB) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 + price/4;
+          wallet1 = wallet1 - price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2;
+          
+        }   else if (prop2owner === playerA) {
+          console.log('bonus' + price/16);
+          wallet1 = wallet1 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+   
+        }               
+
+        
+       
+       
+      }
+      if (player1counter === 6) {
+                propowner = prop3owner;
+
+                price = 72
+                if (prop3owner === prop4owner && prop3owner === prop5owner && prop3owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop3owner === prop4owner && prop3owner === prop5owner && prop3owner === playerB) {
+                 price = price * 4 
+                }
+        if (prop3owner != playerA && prop3owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+           buyButton.style.visibility = 'visible'
+        } else if (prop3owner === playerB) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 + price/4;
+          wallet1 = wallet1 - price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2;
+          
+        }      else if (prop3owner === playerA) {
+          console.log('bonus' + price/16);
+          wallet1 = wallet1 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+   
+        }             
+
+
+        
+        
+       
+      }
+      if (player1counter === 7) {
+                propowner = prop4owner;
+
+                price = 72
+                  if (prop3owner === prop4owner && prop3owner === prop5owner && prop3owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop3owner === prop4owner && prop3owner === prop5owner && prop3owner === playerB) {
+                 price = price * 4 
+                }
+
+        if (prop4owner != playerA && prop4owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+         buyButton.style.visibility = 'visible'
+        } 
+        else if (prop4owner === playerB) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 + price/4;
+          wallet1 = wallet1 - price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2;  
+          
+        }      else if (prop4owner === playerA) {
+          console.log('bonus' + price/16);
+          wallet1 = wallet1 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }             
+        
+       
+       
+      }
+      if (player1counter === 9) {
+                propowner = prop5owner;
+        price = 80
+          if (prop3owner === prop4owner && prop3owner === prop5owner && prop3owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop3owner === prop4owner && prop3owner === prop5owner && prop3owner === playerB) {
+                 price = price * 4 
+                }
+
+        if (prop5owner != playerA && prop5owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton.style.visibility = 'visible'
+        } else if (prop5owner === playerB) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 + price/4;
+          wallet1 = wallet1 - price/4;  document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+          
+        }        
+        else if (prop5owner === playerA) {
+          console.log('bonus' + price/16);
+          wallet1 = wallet1 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+       
+        
+       
+      }
+      
+            if (player1counter === 11) {
+                propowner = prop6owner;
+        price = 88
+          if (prop6owner === prop7owner && prop6owner === prop8owner && prop6owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop6owner === prop7owner && prop6owner === prop8owner && prop6owner === playerB) {
+                 price = price * 4 
+                }
+
+        if (prop6owner != playerA && prop6owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton.style.visibility = 'visible'
+        } else if (prop6owner === playerB) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 + price/4;
+          wallet1 = wallet1 - price/4;  document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+
+          
+        }        
+        else if (prop6owner === playerA) {
+          console.log('bonus' + price/16);
+          wallet1 = wallet1 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+       
+        
+       
+      }
+       if (player1counter === 12) {
+                propowner = prop7owner;
+        price = 88
+        
+  if (prop6owner === prop7owner && prop6owner === prop8owner && prop6owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop6owner === prop7owner && prop6owner === prop8owner && prop6owner === playerB) {
+                 price = price * 4 
+                }
+
+
+        if (prop7owner != playerA && prop7owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton.style.visibility = 'visible'
+        } else if (prop7owner === playerB) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 + price/4;
+          wallet1 = wallet1 - price/4;  document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+          
+        }        
+        else if (prop7owner === playerA) {
+          wallet1 = wallet1 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+       
+        
+       
+      }
+      
+       if (player1counter === 14) {
+                propowner = prop8owner;
+        price = 88
+          if (prop6owner === prop7owner && prop6owner === prop8owner && prop6owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop6owner === prop7owner && prop6owner === prop8owner && prop6owner === playerB) {
+                 price = price * 4 
+                }
+
+
+
+        if (prop8owner != playerA && prop8owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton.style.visibility = 'visible'
+        } else if (prop8owner === playerB) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 + price/4;
+          wallet1 = wallet1 - price/4;  document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+          
+        }        
+        else if (prop8owner === playerA) {
+          console.log('bonus' + price/16);
+          wallet1 = wallet1 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+       
+        
+       
+      }
+      
+      
+       if (player1counter === 16) {
+                propowner = prop9owner;
+        price = 96
+          if (prop9owner === prop10owner && prop9owner === prop11owner && prop9owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop9owner === prop10owner && prop9owner === prop11owner && prop9owner === playerB) {
+                 price = price * 4 
+                }
+
+
+
+        if (prop9owner != playerA && prop9owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton.style.visibility = 'visible'
+        } else if (prop9owner === playerB) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 + price/4;
+          wallet1 = wallet1 - price/4;  document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+          
+        }        
+        else if (prop9owner === playerA) {
+          console.log('bonus' + price/16);
+          wallet1 = wallet1 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+       
+        
+       
+      }
+      
+       if (player1counter === 17) {
+                propowner = prop10owner;
+        price = 96
+          if (prop9owner === prop10owner && prop9owner === prop11owner && prop9owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop9owner === prop10owner && prop9owner === prop11owner && prop9owner === playerB) {
+                 price = price * 4 
+                }
+
+        if (prop10owner != playerA && prop10owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton.style.visibility = 'visible'
+        } else if (prop10owner === playerB) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 + price/4;
+          wallet1 = wallet1 - price/4;  document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+          
+        }        
+        else if (prop10owner === playerA) {
+          console.log('bonus' + price/16);
+          wallet1 = wallet1 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+       
+        
+       
+      }
+       if (player1counter === 19) {
+                propowner = prop11owner;
+        price = 96
+          if (prop9owner === prop10owner && prop9owner === prop11owner && prop9owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop9owner === prop10owner && prop9owner === prop11owner && prop9owner === playerB) {
+                 price = price * 4 
+                }
+
+        if (prop11owner != playerA && prop11owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+  buyButton.style.visibility = 'visible'
+         } else if (prop11owner === playerB) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 + price/4;
+          wallet1 = wallet1 - price/4;  document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+          
+        }        
+        else if (prop11owner === playerA) {
+          console.log('bonus' + price/16);
+          wallet1 = wallet1 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+       
+        
+       
+      }
+      
+       if (player1counter === 21) {
+                propowner = prop12owner;
+        price = 112
+          if (prop12owner === prop13owner && prop12owner === prop14owner && prop12owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop12owner === prop13owner && prop12owner === prop14owner && prop12owner === playerB) {
+                 price = price * 4 
+                }
+
+        if (prop12owner != playerA && prop12owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+  buyButton.style.visibility = 'visible'
+        } else if (prop12owner === playerB) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 + price/4;
+          wallet1 = wallet1 - price/4;  document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+          
+        }        
+        else if (prop12owner === playerA) {
+          console.log('bonus' + price/16);
+          wallet1 = wallet1 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+   
+        }           
+       
+        
+       
+      }
+       if (player1counter === 23) {
+                propowner = prop13owner;
+        price = 112
+          if (prop12owner === prop13owner && prop12owner === prop14owner && prop12owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop12owner === prop13owner && prop12owner === prop14owner && prop12owner === playerB) {
+                 price = price * 4 
+                }
+
+
+        if (prop13owner != playerA && prop13owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+
+         buyButton.style.visibility = 'visible'
+        } else if (prop13owner === playerB) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 + price/4;
+          wallet1 = wallet1 - price/4;  document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+          
+        }        
+        else if (prop13owner === playerA) {
+          console.log('bonus' + price/16);
+          wallet1 = wallet1 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+       
+        
+       
+      }
+       if (player1counter === 24) {
+                propowner = prop14owner;
+        price = 120
+          if (prop12owner === prop13owner && prop12owner === prop14owner && prop12owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop12owner === prop13owner && prop12owner === prop14owner && prop12owner === playerB) {
+                 price = price * 4 
+                }
+
+
+        if (prop114owner != playerA && prop14owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton.style.visibility = 'visible'
+        
+        } else if (prop14owner === playerB) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 + price/4;
+          wallet1 = wallet1 - price/4;  document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+          
+        }        
+        else if (prop14owner === playerA) {
+          console.log('bonus' + price/16);
+          wallet1 = wallet1 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+       
+        
+       
+      }
+       if (player1counter === 26) {
+                propowner = prop15owner;
+        price = 128
+        
+          if (prop15owner === prop16owner && prop15owner === prop17owner && prop15owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop15owner === prop16owner && prop15owner === prop17owner && prop15owner === playerB) {
+                 price = price * 4 
+                }
+
+
+        if (prop15owner != playerA && prop15owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton.style.visibility = 'visible'
+        
+        } else if (prop15owner === playerB) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 + price/4;
+          wallet1 = wallet1 - price/4;  document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+          
+        }        
+        else if (prop15owner === playerA) {
+          console.log('bonus' + price/16);
+          wallet1 = wallet1 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+       
+        
+       
+      }
+       if (player1counter === 28) {
+                propowner = prop16owner;
+        price = 128
+          if (prop15owner === prop16owner && prop15owner === prop17owner && prop15owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop15owner === prop16owner && prop15owner === prop17owner && prop15owner === playerB) {
+                 price = price * 4 
+                }
+
+
+        if (prop16owner != playerA && prop16owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton.style.visibility = 'visible'
+        } else if (prop16owner === playerB) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 + price/4;
+          wallet1 = wallet1 - price/4;  document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+          
+        }        
+        else if (prop16owner === playerA) {
+          console.log('bonus' + price/16);
+          wallet1 = wallet1 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+   
+        }           
+       
+        
+       
+      }
+       if (player1counter === 29) {
+                propowner = prop17owner;
+        price = 136
+          if (prop15owner === prop16owner && prop15owner === prop17owner && prop15owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop15owner === prop16owner && prop15owner === prop17owner && prop15owner === playerB) {
+                 price = price * 4 
+                }
+
+
+        if (prop17owner != playerA && prop17owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton.style.visibility = 'visible'
+        
+        } else if (prop17owner === playerB) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 + price/4;
+          wallet1 = wallet1 - price/4;  document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+          
+        }        
+        else if (prop17owner === playerA) {
+          console.log('bonus' + price/16);
+          wallet1 = wallet1 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+       
+        
+       
+      }
+      if (player1counter === 31) {
+                propowner = prop18owner;
+        price = 144
+          if (prop18owner === prop19owner && prop18owner === prop20owner && prop18owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop18owner === prop19owner && prop18owner === prop20owner && prop18owner === playerB) {
+                 price = price * 4 
+                }
+
+
+        if (prop18owner != playerA && prop18owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton.style.visibility = 'visible'
+        
+        } else if (prop18owner === playerB) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 + price/4;
+          wallet1 = wallet1 - price/4;  document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+          
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+
+        }        
+        else if (prop18owner === playerA) {
+          console.log('bonus' + price/16);
+          wallet1 = wallet1 + price/16;
+          bankmoney = bankmoney - price/6
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+       
+        
+       
+      }
+      if (player1counter === 33) {
+                propowner = prop19owner;
+        price = 144
+           if (prop20owner === prop19owner && prop18owner === prop20owner && prop18owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop19owner === prop18owner && prop19owner === prop20owner && prop19owner === playerB) {
+                 price = price * 4 
+                }
+
+        if (prop19owner != playerA && prop19owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton.style.visibility = 'visible'
+        
+        } else if (prop19owner === playerB) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 + price/4;
+          wallet1 = wallet1 - price/4;  document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+ 
+          
+        }        
+        else if (prop19owner === playerA) {
+          console.log('bonus' + price/16);
+          wallet1 = wallet1 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+       
+        
+       
+      }
+      if (player1counter === 34) {
+                propowner = prop20owner;
+        price = 152
+           if (prop20owner === prop19owner && prop20owner === prop18owner && prop20owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop18owner === prop19owner && prop18owner === prop20owner && prop18owner === playerB) {
+                 price = price * 4 
+                }
+
+        if (prop20owner != playerA && prop20owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton.style.visibility = 'visible'
+        
+        } else if (prop20owner === playerB) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 + price/4;
+          wallet1 = wallet1 - price/4;  document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+
+          
+        }        
+        else if (prop20owner === playerA) {
+          console.log('bonus' + price/16);
+          wallet1 = wallet1 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+   
+        }           
+       
+        
+       
+      }
+      
+      if (player1counter === 37) {
+                propowner = prop21owner;
+        price = 160
+           if (prop21owner === prop22owner && prop21owner === playerA) {
+                 price = price * 4 
+                }
+        
+  if (prop21owner === prop22owner && prop21owner === playerB) {
+                 price = price * 4 
+                }
+
+        if (prop21owner != playerA && prop21owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton.style.visibility = 'visible'
+        
+        } else if (prop21owner === playerB) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 + price/4;
+          wallet1 = wallet1 - price/4;  document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+
+          
+        }        
+        else if (prop21owner === playerA) {
+          console.log('bonus' + price/16);
+          wallet1 = wallet1 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+       
+        
+       
+      }
+      if (player1counter === 39) {
+                propowner = prop22owner;
+        price = 176
+          if (prop21owner === prop22owner && prop21owner === playerA) {
+                 price = price * 4 
+                }
+        
+  if (prop21owner === prop22owner && prop21owner === playerB) {
+                 price = price * 4 
+                }
+
+        if (prop22owner != playerA && prop22owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton.style.visibility = 'visible'
+        
+        } else if (prop22owner === playerB) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 + price/4;
+          wallet1 = wallet1 - price/4;  document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+ 
+          
+        }        
+        else if (prop22owner === playerA) {
+          console.log('bonus' + price/16);
+          wallet1 = wallet1 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+       
+       
+      }
+      
+      
+   
+      
+      
+      
+      
+      
+      console.log('Price: ' + price)
+      
+    }
+    
+    function fields2() {
+      
+                
+                
+      if (player2counter === 1) {
+        
+        // This function is the same as field1() but for other player. check the comments there
+                propowner = prop1owner;
+                price = 56
+                  if (prop1owner === prop2owner && prop1owner === playerA) {
+                 price = price * 4 
+                }
+        if (prop1owner === prop2owner && prop1owner === playerB) {
+                 price = price * 4 
+                }
+
+
+        
+        if (prop1owner != playerB && prop1owner != playerA) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton2.style.visibility = 'visible';
+        
+        } else if (prop1owner === playerA) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 - price/4;
+          wallet1 = wallet1 + price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+ 
+          
+        }else if (prop1owner === playerB) {
+          console.log('bonus' + price/16);
+          wallet2 = wallet2 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+   
+        }           
+        
+       
+       
+      }
+       if (player2counter === 3) {
+                 propowner = prop2owner;
+        price = 64
+           if (prop1owner === prop2owner && prop1owner === playerA) {
+                 price = price * 4 
+                }
+        if (prop1owner === prop2owner && prop1owner === playerB) {
+                 price = price * 4 
+                }
+
+
+         
+         if (prop2owner != playerB && prop2owner != playerA) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton2.style.visibility = 'visible'
+         
+         } else if (prop2owner === playerA) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 - price/4;
+          wallet1 = wallet1 + price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+  
+          
+        }
+        else if (prop2owner === playerB) {
+          console.log('bonus' + price/16);
+          wallet2 = wallet2 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+   
+        }           
+        
+       
+       
+      }
+      if (player2counter === 6) {
+                propowner = prop3owner;
+
+                price = 72
+                if (prop3owner === prop4owner && prop3owner === prop5owner && prop3owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop3owner === prop4owner && prop3owner === prop5owner && prop3owner === playerB) {
+                 price = price * 4 
+                }
+
+        if (prop3owner != playerB && prop3owner != playerA) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton2.style.visibility = 'visible'
+        }else if (prop3owner === playerA) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 - price/4;
+          wallet1 = wallet1 + price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+  document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+
+          
+        } else if (prop3owner === playerB) {
+          console.log('bonus' + price/16);
+          wallet2 = wallet2 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+    document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+        
+        
+        
+       
+      }
+      if (player2counter === 7) {
+                propowner = prop4owner;
+        price = 72
+        if (prop3owner === prop4owner && prop3owner === prop5owner && prop3owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop3owner === prop4owner && prop3owner === prop5owner && prop3owner === playerB) {
+                 price = price * 4 
+                }
+
+        
+        if (prop4owner != playerB && prop4owner != playerA) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton2.style.visibility = 'visible'
+        } 
+        else if (prop4owner === playerA) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 - price/4;
+          wallet1 = wallet1 + price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+    
+          
+        }
+        else if (prop4owner === playerB) {
+          console.log('bonus' + price/16);
+          wallet2 = wallet2 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+   
+        }           
+        
+        
+       
+       
+      }
+      if (player2counter === 9) {
+                propowner = prop5owner;
+        price = 80
+        if (prop3owner === prop4owner && prop3owner === prop5owner && prop3owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop3owner === prop4owner && prop3owner === prop5owner && prop3owner === playerB) {
+                 price = price * 4 
+                }
+
+        if (prop5owner != playerB && prop5owner != playerA) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton2.style.visibility = 'visible'
+        } else if (prop5owner === playerA) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 - price/4;
+          wallet1 = wallet1 + price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+  
+          
+        }
+        else if (prop5owner === playerB) {
+          console.log('bonus' + price/8);
+          wallet2 = wallet2 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+   
+        }           
+        
+        
+       
+        
+       
+      }
+       if (player2counter === 11) {
+                propowner = prop6owner;
+        price = 88
+          if (prop6owner === prop7owner && prop6owner === prop8owner && prop6owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop6owner === prop7owner && prop6owner === prop8owner && prop6owner === playerB) {
+                 price = price * 4 
+                }
+
+        if (prop6owner != playerA && prop6owner != playerB) {
+         buyButton2.style.visibility = 'visible';
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+        } else if (prop6owner === playerA) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 - price/4;
+          wallet1 = wallet1 + price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+ 
+          
+        }
+        else if (prop6owner === playerB) {
+          console.log('bonus' + price/16);
+          wallet2 = wallet2 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+   
+        }           
+        
+        
+       
+        
+       
+      }
+      
+       if (player2counter === 12) {
+                propowner = prop7owner;
+        price = 88
+          if (prop6owner === prop7owner && prop6owner === prop8owner && prop6owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop6owner === prop7owner && prop6owner === prop8owner && prop6owner === playerB) {
+                 price = price * 4 
+                }
+
+        if (prop7owner != playerA && prop7owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton2.style.visibility = 'visible'
+        
+        } else if (prop7owner === playerA) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 - price/4;
+          wallet1 = wallet1 + price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+  
+          
+        }
+        else if (prop7owner === playerB) {
+          console.log('bonus' + price/16);
+          wallet2 = wallet2 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+    document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+        
+        
+       
+        
+       
+      }
+      
+       if (player2counter === 14) {
+                propowner = prop8owner;
+        price = 88
+          if (prop6owner === prop7owner && prop6owner === prop8owner && prop6owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop6owner === prop7owner && prop6owner === prop8owner && prop6owner === playerB) {
+                 price = price * 4 
+                }
+
+        if (prop8owner != playerA && prop8owner != playerB) {
+          
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+         buyButton2.style.visibility = 'visible'
+        } else if (prop8owner === playerA) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 - price/4;
+          wallet1 = wallet1 + price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+    
+          
+        }
+        else if (prop8owner === playerB) {
+          console.log('bonus' + price/16);
+          wallet2 = wallet2 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+    document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+        
+        
+       
+        
+       
+      }
+      
+      if (player2counter === 16) {
+                propowner = prop9owner;
+        price = 96
+         if (prop9owner === prop10owner && prop9owner === prop11owner && prop9owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop9owner === prop10owner && prop9owner === prop11owner && prop9owner === playerB) {
+                 price = price * 4 
+                }
+
+
+
+        if (prop9owner != playerA && prop9owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton2.style.visibility = 'visible'
+        } else if (prop9owner === playerA) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 - price/4;
+          wallet1 = wallet1 + price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+ 
+          
+        }
+        else if (prop9owner === playerB) {
+          console.log('bonus' + price/16);
+          wallet2 = wallet2 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+    document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+        
+        
+       
+        
+       
+      }
+      
+      if (player2counter === 17) {
+                propowner = prop10owner;
+        price = 96
+         if (prop9owner === prop10owner && prop9owner === prop11owner && prop9owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop9owner === prop10owner && prop9owner === prop11owner && prop9owner === playerB) {
+                 price = price * 4 
+                }
+
+
+
+        if (prop10owner != playerB && prop10owner != playerA) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton2.style.visibility = 'visible'
+        } else if (prop10owner === playerA) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 - price/4;
+          wallet1 = wallet1 + price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+  
+          
+        }
+        else if (prop10owner === playerB) {
+          console.log('bonus' + price/16);
+          wallet2 = wallet2 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+    document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+        
+        
+       
+        
+       
+      }
+      
+      if (player2counter === 19) {
+                propowner = prop11owner;
+        price = 96 
+         if (prop9owner === prop10owner && prop9owner === prop11owner && prop9owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop9owner === prop10owner && prop9owner === prop11owner && prop9owner === playerB) {
+                 price = price * 4 
+                }
+
+
+
+        if (prop11owner != playerB && prop11owner != playerA) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+
+         buyButton2.style.visibility = 'visible'
+        } else if (prop11owner === playerA) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 - price/4;
+          wallet1 = wallet1 + price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+
+          
+        }
+        else if (prop11owner === playerB) {
+          console.log('bonus' + price/16);
+          wallet2 = wallet2 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+    document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+        
+        
+       
+        
+       
+      }
+       if (player2counter === 21) {
+                propowner = prop12owner;
+        price = 112 
+         if (prop12owner === prop13owner && prop12owner === prop14owner && prop12owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop12owner === prop13owner && prop12owner === prop14owner && prop12owner === playerB) {
+                 price = price * 4 
+                }
+
+        if (prop12owner != playerA && prop12owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+ buyButton2.style.visibility = 'visible'
+        } else if (prop12owner === playerA) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 - price/4;
+          wallet1 = wallet1 + price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+          
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+
+        }
+        else if (prop12owner === playerB) {
+          console.log('bonus' + price/16);
+          wallet2 = wallet2 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+    document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+        
+        
+       
+        
+       
+      }
+       if (player2counter === 23) {
+                propowner = prop13owner;
+        price = 112 
+         if (prop12owner === prop13owner && prop12owner === prop14owner && prop12owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop12owner === prop13owner && prop12owner === prop14owner && prop12owner === playerB) {
+                 price = price * 4 
+                }
+
+        if (prop13owner != playerB && prop13owner != playerA) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+
+         buyButton2.style.visibility = 'visible'
+        } else if (prop13owner === playerA) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 - price/4;
+          wallet1 = wallet1 + price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+
+          
+        }
+        else if (prop13owner === playerB) {
+          console.log('bonus' + price/16);
+          wallet2 = wallet2 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+   
+        }           
+        
+        
+       
+        
+       
+      }
+       if (player2counter === 24) {
+                propowner = prop14owner;
+        price = 120 
+         if (prop12owner === prop13owner && prop12owner === prop14owner && prop12owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop12owner === prop13owner && prop12owner === prop14owner && prop12owner === playerB) {
+                 price = price * 4 
+                }
+
+        if (prop14owner != playerB && prop14owner != playerA) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+
+        
+         buyButton2.style.visibility = 'visible'
+        } else if (prop14owner === playerA) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 - price/4;
+          wallet1 = wallet1 + price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+    
+          
+        }
+        else if (prop14owner === playerB) {
+          console.log('bonus' + price/16);
+          wallet2 = wallet2 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+    document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+        
+        
+       
+        
+       
+      }
+       if (player2counter === 26) {
+                propowner = prop15owner;
+        price = 128 
+         if (prop15owner === prop16owner && prop15owner === prop17owner && prop15owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop15owner === prop16owner && prop15owner === prop17owner && prop15owner === playerB) {
+                 price = price * 4 
+                }
+
+
+
+        if (prop15owner != playerA && prop15owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+
+         buyButton2.style.visibility = 'visible'
+        } else if (prop15owner === playerA) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 - price/4;
+          wallet1 = wallet1 + price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+ 
+          
+        }
+        else if (prop15owner === playerB) {
+          console.log('bonus' + price/16);
+          wallet2 = wallet2 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+    document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+        
+        
+       
+        
+       
+      }
+       if (player2counter === 28) {
+                propowner = prop16owner;
+        price = 128 
+         if (prop15owner === prop16owner && prop15owner === prop17owner && prop15owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop15owner === prop16owner && prop15owner === prop17owner && prop15owner === playerB) {
+                 price = price * 4 
+                }
+
+
+
+        if (prop16owner != playerA && prop16owner != playerB) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+
+         buyButton2.style.visibility = 'visible'
+        
+        } else if (prop16owner === playerA) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 - price/4;
+          wallet1 = wallet1 + price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+          
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+  
+        }
+        else if (prop16owner === playerB) {
+          console.log('bonus' + price/16);
+          wallet2 = wallet2 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+   
+        }           
+        
+        
+       
+        
+       
+      }
+       if (player2counter === 29) {
+                propowner = prop17owner;
+        price = 136 
+         if (prop15owner === prop16owner && prop15owner === prop17owner && prop15owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop15owner === prop16owner && prop15owner === prop17owner && prop15owner === playerB) {
+                 price = price * 4 
+                }
+
+
+
+        if (prop17owner != playerB && prop17owner != playerA) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+
+         buyButton2.style.visibility = 'visible'
+        
+        } else if (prop17owner === playerA) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 - price/4;
+          wallet1 = wallet1 + price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+
+          
+        }
+        else if (prop17owner === playerB) {
+          console.log('bonus' + price/16);
+          wallet2 = wallet2 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+    document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+        
+        
+       
+        
+       
+      }
+      
+      if (player2counter === 31) {
+                propowner = prop18owner;
+        price = 144 
+         if (prop18owner === prop19owner && prop18owner === prop20owner && prop18owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop18owner === prop19owner && prop18owner === prop20owner && prop18owner === playerB) {
+                 price = price * 4 
+                }
+
+
+
+        if (prop18owner != playerB && prop18owner != playerA) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+
+         buyButton2.style.visibility = 'visible'
+        
+        } else if (prop18owner === playerA) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 - price/4;
+          wallet1 = wallet1 + price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+
+          
+        }
+        else if (prop18owner === playerB) {
+          console.log('bonus' + price/16);
+          wallet2 = wallet2 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+    document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+        
+        
+       
+        
+       
+      }
+       
+      if (player2counter === 33) {
+                price = 144 
+
+        
+        
+         if (prop18owner === prop19owner && prop18owner === prop20owner && prop18owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop18owner === prop19owner && prop18owner === prop20owner && prop18owner === playerB) {
+                 price = price * 4 
+                }
+
+
+                propowner = prop19owner;
+
+        if (prop19owner != playerB && prop19owner != playerA) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+
+         buyButton2.style.visibility = 'visible'
+        
+        } else if (prop19owner === playerA) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 - price/4;
+          wallet1 = wallet1 + price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+
+          
+        }
+        else if (prop19owner === playerB) {
+          console.log('bonus' + price/16);
+          wallet2 = wallet2 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+   
+        }           
+        
+        
+       
+        
+       
+      }
+      
+      if (player2counter === 34) {
+                price = 152 
+
+         if (prop18owner === prop19owner && prop18owner === prop20owner && prop18owner === playerA) {
+                 price = price * 4 
+                }
+        
+if (prop18owner === prop19owner && prop18owner === prop20owner && prop18owner === playerB) {
+                 price = price * 4 
+                }
+
+
+                propowner = prop20owner;
+
+        if (prop20owner != playerB && prop20owner != playerA) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+
+         buyButton2.style.visibility = 'visible'
+        
+        } else if (prop20owner === playerA) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 - price/4;
+          wallet1 = wallet1 + price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+
+          
+        }
+        else if (prop20owner === playerB) {
+          console.log('bonus' + price/16);
+          wallet2 = wallet2 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+ document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+   
+        }           
+        
+        
+       
+        
+       
+      }
+      
+      if (player2counter === 37) {
+                propowner = prop21owner;
+        price = 160 
+         if (prop21owner === prop22owner && prop21owner === playerA) {
+                 price = price * 4 
+                }
+        
+  if (prop21owner === prop22owner && prop21owner === playerB) {
+                 price = price * 4 
+                }
+
+        if (prop21owner != playerB && prop21owner != playerA) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+price;
+
+
+         buyButton2.style.visibility = 'visible'
+        
+        } else if (prop21owner === playerA) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 - price/4;
+          wallet1 = wallet1 + price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+
+          
+        }
+        else if (prop21owner === playerB) {
+          console.log('bonus' + price/16);
+          wallet2 = wallet2 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+    document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+        
+        
+       
+        
+       
+      }
+      
+      if (player2counter === 39) {
+                propowner = prop22owner;
+        price = 176 
+         if (prop21owner === prop22owner && prop21owner === playerA) {
+                 price = price * 4 
+                }
+        
+  if (prop21owner === prop22owner && prop21owner === playerB) {
+                 price = price * 4 
+                }
+
+        if (prop22owner != playerB && prop22owner != playerA) {
+          document.getElementById('fieldPrice').innerHTML = 'PRICE: '+ price;
+
+
+         buyButton2.style.visibility = 'visible'
+        
+        } else if (prop22owner === playerA) {
+          console.log('busted' + price/4);
+          wallet2 = wallet2 - price/4;
+          wallet1 = wallet1 + price/4;
+            document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+          
+document.getElementById('fieldPrice').innerHTML = "-" + price/4 + announcement2; 
+ 
+        }
+        else if (prop22owner === playerB) {
+          console.log('bonus' + price/16);
+          wallet2 = wallet2 + price/16;
+          bankmoney = bankmoney - price/16
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+
+    document.getElementById('fieldPrice').innerHTML = "+" + price/16 + announcement3;
+
+        }           
+        
+        
+       
+        
+       
+      }
+      
+      
+   
+
+      
+      
+      console.log('Price: ' + price)
+      
+    }
+    
+    function buying1 () {
+      
+      // Buying and paying for a property
+      
+     wallet1 = wallet1*1 - price*1;
+      bankmoney = bankmoney + price;
+              document.getElementById('bankmoney').innerHTML = bankmoney;
+
+      
+      console.log(wallet1)
+          document.getElementById('wallet1').innerHTML = wallet1;
+      
+// For each property
+      
+      if (propowner === prop1owner) {
+       
+       prop1owner = playerA 
+      }
+      if (propowner === prop2owner) {
+       prop2owner = playerA 
+      }
+        
+      if (propowner === prop3owner) {
+       prop3owner = playerA 
+      }
+        
+      if (propowner === prop4owner) {
+       prop4owner = playerA 
+      }
+        
+      if (propowner === prop5owner) {
+       prop5owner = playerA 
+      }
+      
+      if (propowner === prop6owner) {
+       prop6owner = playerA 
+      }
+        if (propowner === prop7owner) {
+       prop7owner = playerA 
+      }
+        if (propowner === prop8owner) {
+       prop8owner = playerA 
+      }
+        if (propowner === prop9owner) {
+       prop9owner = playerA 
+      }
+        if (propowner === prop10owner) {
+       prop10owner = playerA 
+      }
+      if (propowner === prop11owner) {
+       prop11owner = playerA 
+      }
+          if (propowner === prop12owner) {
+       prop12owner = playerA 
+      }
+        if (propowner === prop13owner) {
+       prop13owner = playerA 
+      }
+        if (propowner === prop14owner) {
+       prop14owner = playerA 
+      }
+        if (propowner === prop15owner) {
+       prop15owner = playerA 
+      }
+        if (propowner === prop16owner) {
+       prop16owner = playerA 
+      }
+      if (propowner === prop17owner) {
+       prop17owner = playerA 
+      }
+            if (propowner === prop18owner) {
+       prop18owner = playerA 
+      }
+        if (propowner === prop19owner) {
+       prop19owner = playerA 
+      }
+        if (propowner === prop20owner) {
+       prop20owner = playerA 
+      }
+        if (propowner === prop21owner) {
+       prop21owner = playerA 
+      }
+      if (propowner === prop22owner) {
+       prop22owner = playerA 
+      }
+      
+      if (propowner === ico1owner) {
+       ico1owner = playerA 
+      }
+      
+      if (propowner === ico2owner) {
+       ico2owner = playerA 
+      }
+      
+      if (propowner === ico3owner) {
+       ico3owner = playerA 
+      }
+      
+      if (propowner === ico4owner) {
+       ico4owner = playerA 
+       
+      
+      }
+      
+      // Anouncing the purchase in the text label
+         all1 = all1 + positions[player1counter] + ", "
+         
+         // calling the next function
+              next1()
+
+                  buyButton.style.visibility = 'hidden'
+                  
+                  // Painting the field in the color of the new owner
+                  
+                  let positionValue = positions[player1counter];
+      document.getElementById(positionValue).setAttribute('fill','cyan');
+
+      
+    }
+    
+    function buying2 () {
+      
+      // Check the comments for buying1() function
+      
+     wallet2 = wallet2*1 - price*1;
+      bankmoney = bankmoney + price;
+              document.getElementById('bankmoney').innerHTML = bankmoney;
+
+      console.log(wallet2)
+          document.getElementById('wallet2').innerHTML = wallet2;
+
+      
+      if (propowner === prop1owner) {
+       prop1owner = playerB 
+      }
+      if (propowner === prop2owner) {
+       prop2owner = playerB 
+      }
+        
+      if (propowner === prop3owner) {
+       prop3owner = playerB 
+      }
+        
+      if (propowner === prop4owner) {
+       prop4owner = playerB 
+      }
+        
+      if (propowner === prop5owner) {
+       prop5owner = playerB 
+      }
+      if (propowner === prop6owner) {
+       prop6owner = playerB 
+      }
+      if (propowner === prop7owner) {
+       prop7owner = playerB 
+      }
+      if (propowner === prop8owner) {
+       prop8owner = playerB 
+      }
+      if (propowner === prop9owner) {
+       prop9owner = playerB 
+      }
+      if (propowner === prop10owner) {
+       prop10owner = playerB 
+      }
+      if (propowner === prop11owner) {
+       prop11owner = playerB 
+      }
+          if (propowner === prop12owner) {
+       prop12owner = playerB 
+      }
+      if (propowner === prop13owner) {
+       prop13owner = playerB 
+      }
+      if (propowner === prop14owner) {
+       prop14owner = playerB 
+      }
+      if (propowner === prop15owner) {
+       prop15owner = playerB 
+      }
+      if (propowner === prop16owner) {
+       prop16owner = playerB 
+      }
+      if (propowner === prop17owner) {
+       prop17owner = playerB 
+      }
+        
+           if (propowner === prop18owner) {
+       prop18owner = playerB 
+      }
+      if (propowner === prop19owner) {
+       prop19owner = playerB 
+      }
+      if (propowner === prop20owner) {
+       prop20owner = playerB 
+      }
+      if (propowner === prop21owner) {
+       prop21owner = playerB 
+      }
+      if (propowner === prop22owner) {
+       prop22owner = playerB 
+      }
+      
+      
+      if (propowner === ico1owner) {
+       ico1owner = playerB 
+      }
+      
+      if (propowner === ico2owner) {
+       ico2owner = playerB 
+      }
+      
+      if (propowner === ico3owner) {
+       ico3owner = playerB 
+      }
+      
+      if (propowner === ico4owner) {
+       ico4owner = playerB 
+      }
+               all2 = all2 + positions[player2counter] + ", "
+
+            next2()
+
+                  buyButton2.style.visibility = 'hidden'
+let positionValue = positions[player2counter];
+      document.getElementById(positionValue).setAttribute('fill','yellow');
+      
+    }
+    
+    
+    function icofields1() {
+      if (player1counter === 5) {
+        
+        propowner = ico1owner;
+        price = 80
+                            document.getElementById('fieldPrice').innerHTML = price;
+
+                
+              if ( ico1owner === ico2owner && ico1owner === ico3owner && ico1owner === ico4owner && ico1owner === playerA) {
+                
+               price = price *6; 
+                     
+     
+         } else { price = 80}
+        if (ico1owner != playerA && ico1owner != playerB)  {         
+                    buyButton.style.visibility = 'visible';  
+        } if (ico1owner === playerA) {
+        document.getElementById('fieldPrice').innerHTML = "+" + price/4 + " - Your investment was clever!" 
+        console.log('bonus' + price/4);
+          wallet1 = wallet1 + price/4;
+          bankmoney = bankmoney - price/4
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+          
+          
+        }
+        
+        if (ico1owner === playerB) {
+          price = 80;
+           document.getElementById('fieldPrice').innerHTML = "+" + price/2 + " - Feel sorry for not investing???" 
+        console.log('bonus' - price/2);
+          wallet1 = wallet1 - price/2;
+                    wallet2 = wallet2 + price/2;
+
+          bankmoney = bankmoney - price/4
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+          
+        }
+        
+        
+      }
+      
+      if (player1counter === 15) {
+        
+        propowner = ico2owner;
+        price = 160
+        document.getElementById('fieldPrice').innerHTML = "PRICE: " + price;
+
+                
+              if ( ico2owner === ico1owner && ico2owner === ico3owner && ico2owner === ico4owner && ico2owner === playerA) {
+                
+               price = price *6; 
+              }        
+        
+        if (ico2owner != playerA && ico2owner != playerB)  {         
+                    buyButton.style.visibility = 'visible';      
+        }
+        if (ico2owner === playerA) {
+                  document.getElementById('fieldPrice').innerHTML = "+" + price/4 + " - Your investment was clever!" 
+
+          console.log('bonus' + price/4);
+          wallet1 = wallet1 + price/4;
+          bankmoney = bankmoney - price/4
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+          
+          
+        }
+        
+            if (ico2owner === playerB) {
+              price = 160
+           document.getElementById('fieldPrice').innerHTML = "-" + price/2 + " - Feel sorry for not investing???" 
+        console.log('bonus' - price/2);
+          wallet1 = wallet1 - price/2;
+                    wallet2 = wallet2 + price/2;
+
+          bankmoney = bankmoney - price/4
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+          
+        }
+        
+        
+      }
+   
+         if (player1counter === 25) {
+        
+        propowner = ico3owner;
+        price = 240
+        document.getElementById('fieldPrice').innerHTML = "PRICE: " + price;
+
+              if ( ico3owner === ico1owner && ico3owner === ico2owner && ico3owner === ico4owner && ico3owner === playerA) {
+                
+               price = price *6; 
+              }        
+        
+        if (ico3owner != playerA && ico3owner != playerB)  {         
+                    buyButton.style.visibility = 'visible';      
+        } 
+        if (ico3owner === playerA) {
+                  document.getElementById('fieldPrice').innerHTML = "+" + price/4 + " - Your investment was clever!" 
+
+          console.log('bonus' + price/4);
+          wallet1 = wallet1 + price/4;
+          bankmoney = bankmoney - price/4
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+          
+          
+        }
+           
+        if (ico3owner === playerB) {
+          price = 240
+           document.getElementById('fieldPrice').innerHTML = "-" + price/2 + " - Feel sorry for not investing???" 
+        console.log('bonus' - price/2);
+          wallet1 = wallet1 - price/2;
+                    wallet2 = wallet2 + price/2;
+
+          bankmoney = bankmoney - price/4
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+          
+        }
+        
+        
+      }
+   
+            if (player1counter === 35) {
+        
+        propowner = ico4owner;
+        price = 320
+        document.getElementById('fieldPrice').innerHTML = "PRICE: " + price;
+
+              if ( ico4owner === ico1owner && ico4owner === ico3owner && ico4owner === ico2owner && ico4owner === playerA) {
+                
+               price = price *6; 
+              }        
+       
+        if (ico4owner != playerA && ico4owner != playerB)  {         
+                    buyButton.style.visibility = 'visible';      
+        }
+         if (ico4owner === playerA) {
+                   document.getElementById('fieldPrice').innerHTML = "+" + price/4 + " - Your investment was clever!" 
+
+          console.log('bonus' + price/4);
+          wallet1 = wallet1 + price/4;
+          bankmoney = bankmoney - price/4
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+          
+          
+        }
+              
+        if (ico4owner === playerB) {
+          price = 320
+           document.getElementById('fieldPrice').innerHTML = "-" + price/2 + " - Feel sorry for not investing???" 
+        console.log('bonus' - price/2);
+          wallet1 = wallet1 - price/2;
+                    wallet2 = wallet2 + price/2;
+
+          bankmoney = bankmoney - price/4
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+          
+        }
+        
+        
+      }
+   
+      
+    }
+    function icofields2() {
+      
+      if (player2counter === 5) {
+        
+        propowner = ico1owner;
+        price = 80
+        document.getElementById('fieldPrice').innerHTML = "PRICE: " + price;
+
+              if ( ico1owner === ico2owner && ico1owner === ico3owner && ico1owner === ico4owner && ico1owner === playerB) {
+                
+               price = price *6; 
+              }        
+        
+        if (ico1owner != playerA && ico1owner != playerB)  {         
+                    buyButton2.style.visibility = 'visible';      
+        }
+          if (ico1owner === playerB) {
+                    document.getElementById('fieldPrice').innerHTML = "+" + price/4 + " - Your investment was clever!" 
+
+          console.log('bonus' + price/4);
+          wallet2 = wallet2 + price/4;
+          bankmoney = bankmoney - price/4
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+          
+          
+        }
+        
+        if (ico1owner === playerA) {
+          price = 80
+           document.getElementById('fieldPrice').innerHTML = "-" + price/2 + " - Feel sorry for not investing???" 
+        console.log('bonus' - price/2);
+          wallet2 = wallet2 - price/2;
+                    wallet1 = wallet1 + price/2;
+
+          bankmoney = bankmoney - price/4
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+          
+        }
+        
+        
+      }
+      
+      if (player2counter === 15) {
+        
+        propowner = ico2owner;
+        price = 160
+        document.getElementById('fieldPrice').innerHTML = "PRICE: " + price;
+
+              if ( ico2owner === ico1owner && ico2owner === ico3owner && ico2owner === ico4owner && ico2owner === playerB) {
+                
+               price = price *6; 
+              }        
+        
+        if (ico2owner != playerA && ico2owner != playerB)  {         
+                    buyButton2.style.visibility = 'visible';      
+        }
+         if (ico2owner === playerB) {
+                   document.getElementById('fieldPrice').innerHTML = "+" + price/4 + " - Your investment was clever!" 
+
+          console.log('bonus' + price/4);
+          wallet2 = wallet2 + price/4;
+          bankmoney = bankmoney - price/4
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+          
+          
+        }
+            
+        if (ico2owner === playerA) {
+          price = 160
+           document.getElementById('fieldPrice').innerHTML = "-" + price/2 + " - Feel sorry for not investing???" 
+        console.log('bonus' - price/2);
+          wallet2 = wallet2 - price/2;
+                    wallet1 = wallet1 + price/2;
+
+          bankmoney = bankmoney - price/4
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+          
+        }
+        
+        
+      }
+   
+         if (player2counter === 25) {
+        
+        propowner = ico3owner;
+        price = 240
+        document.getElementById('fieldPrice').innerHTML = "PRICE: " + price;
+
+              if ( ico3owner === ico1owner && ico3owner === ico2owner && ico3owner === ico4owner && ico3owner === playerB) {
+                
+               price = price *6; 
+              }        
+     
+        if (ico3owner != playerA && ico3owner != playerB)  {         
+                    buyButton2.style.visibility = 'visible';      
+        }
+         if (ico3owner === playerB) {
+                   document.getElementById('fieldPrice').innerHTML = "+" + price/4 + " - Your investment was clever!" 
+
+          console.log('bonus' + price/4);
+          wallet2 = wallet2 + price/4;
+          bankmoney = bankmoney - price/4
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+          
+          
+        }
+               
+        if (ico3owner === playerA) {
+          price = 240
+           document.getElementById('fieldPrice').innerHTML = "-" + price/2 + " - Feel sorry for not investing???" 
+        console.log('bonus' - price/2);
+          wallet2 = wallet2 - price/2;
+                    wallet1 = wallet1 + price/2;
+
+          bankmoney = bankmoney - price/4
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+          
+        }
+        
+        
+      }
+   
+            if (player2counter === 35) {
+        
+        propowner = ico4owner;
+        price = 320
+        document.getElementById('fieldPrice').innerHTML = "PRICE: " + price;
+
+              if ( ico4owner === ico1owner && ico4owner === ico3owner && ico4owner === ico2owner && ico4owner === playerB) {
+                
+               price = price *6; 
+              }        
+         
+        if (ico4owner != playerA && ico4owner != playerB)  {         
+                    buyButton2.style.visibility = 'visible';      
+        }
+         if (ico4owner === playerB) {
+                   document.getElementById('fieldPrice').innerHTML = "+" + price/4 + " - Your investment was clever!" 
+
+          console.log('bonus' + price/4);
+          wallet2 = wallet2 + price/4;
+          bankmoney = bankmoney - price/4
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+                  document.getElementById('bankmoney').innerHTML = bankmoney;
+          
+          
+        }
+                  
+        if (ico4owner === playerA) {
+          price = 320
+           document.getElementById('fieldPrice').innerHTML = "-" + price/2 + " - Feel sorry for not investing???" 
+        console.log('bonus' - price/2);
+          wallet2 = wallet2 - price/2;
+                    wallet1 = wallet1 + price/2;
+
+          bankmoney = bankmoney - price/4
+              document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+          
+        }
+        
+        
+      }
+   
+      
+    }
+    
+    function dayTradeFields1() {
+      let tradeSum = Math.floor(Math.random() * 400) + (-200);
+      if (player1counter ===  8) {
+        wallet1 = wallet1 + tradeSum*1;
+        document.getElementById('wallet1').innerHTML = wallet1;
+        bankmoney = bankmoney - tradeSum
+        
+        console.log("SURPRISE" + tradeSum)
+                    document.getElementById('fieldPrice').innerHTML = 'Surprise ' + tradeSum;
+
+      }
+      
+      if (player1counter ===  18) {
+        wallet1 = wallet1 + tradeSum*1;
+        document.getElementById('wallet1').innerHTML = wallet1;
+                bankmoney = bankmoney - tradeSum
+
+        console.log("SURPRISE" + tradeSum)
+document.getElementById('fieldPrice').innerHTML = 'Surprise ' + tradeSum;
+
+      }
+      
+      if (player1counter ===  32) {
+        wallet1 = wallet1 + tradeSum*1;
+        document.getElementById('wallet1').innerHTML = wallet1;
+                bankmoney = bankmoney - tradeSum
+
+        console.log("SURPRISE" + tradeSum)
+document.getElementById('fieldPrice').innerHTML = 'Surprise ' + tradeSum;
+
+      }
+      
+      
+    }
+    
+    function dayTradeFields2() {
+      let tradeSum = Math.floor(Math.random() * 400) + (-200);
+      if (player2counter ===  8) {
+        wallet2 = wallet2 + tradeSum*1;
+        document.getElementById('wallet2').innerHTML = wallet1;
+                bankmoney = bankmoney - tradeSum
+
+        console.log("SURPRISE" + tradeSum)
+document.getElementById('fieldPrice').innerHTML = 'Surprise ' + tradeSum;
+
+      }
+      
+      if (player2counter ===  18) {
+        wallet2 = wallet2 + tradeSum*1;
+        document.getElementById('wallet2').innerHTML = wallet2;
+        
+        console.log("SURPRISE" + tradeSum)
+        bankmoney = bankmoney - tradeSum
+document.getElementById('fieldPrice').innerHTML = 'Surprise ' + tradeSum;
+
+      }
+      
+      if (player2counter ===  32) {
+        wallet2 = wallet2 + tradeSum*1;
+        document.getElementById('wallet2').innerHTML = wallet2;
+        
+        console.log("SURPRISE" + tradeSum)
+        bankmoney = bankmoney - tradeSum
+document.getElementById('fieldPrice').innerHTML = 'Surprise ' + tradeSum;
+
+      }
+      
+      
+    }
+    
+    
+    function next1() {
+      
+      console.log(all2)
+      
+      button2.style.visibility = "visible";
+      nextButton1.style.visibility = "hidden";
+        document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+    document.getElementById('bankmoney').innerHTML = bankmoney;
+                     document.getElementById('properties').innerHTML = all2;
+          document.getElementById('player').innerHTML = 'PLAYER B';
+
+
+
+      
+      if (buyButton.style.visibility === 'visible') {
+          buyButton.style.visibility = 'hidden'
+          }
+
+     
+      
+    }
+    function next2() {
+            console.log(all1)
+
+       button.style.visibility = "visible";
+      nextButton2.style.visibility = "hidden"
+      document.getElementById('wallet1').innerHTML = wallet1;
+    document.getElementById('wallet2').innerHTML = wallet2;
+    document.getElementById('bankmoney').innerHTML = bankmoney;
+            document.getElementById('properties').innerHTML = all1;
+document.getElementById('player').innerHTML = 'PLAYER A';
+       
+      if (buyButton2.style.visibility === 'visible') {
+          buyButton2.style.visibility = 'hidden'
+          }
+
+
+
+      
+    }
+     
+   button.addEventListener("click", push1);
+   button2.addEventListener("click", push2);
+
+
+   player1b.addEventListener("click", playerOne);
+       buyButton.addEventListener("click", buying1);
+           buyButton2.addEventListener("click", buying2);
+    
+    nextButton1.addEventListener("click", next1);
+        nextButton2.addEventListener("click", next2);
+
+
+
+
+    
+    
+
+
+
+
+    
+    </script>
+  
+</html>
+
